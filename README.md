@@ -1,6 +1,6 @@
-# create-svelte
+## Next steps
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Try absolute positioning for if statements and dynamic positioning of hidden elements
 
 ## Creating a project
 
