@@ -24,11 +24,11 @@
 
 	let todos = [
 		{ id: uid++, done: false, description: 'write some docs' },
-		{ id: uid++, done: false, description: 'start kalkjsfdlajsdfklajslkfjaslfjklasdjflwriting blog post' },
-		{ id: uid++, done: true,  description: 'buy some milk' },
-		{ id: uid++, done: false, description: 'mow the lawn' },
-		{ id: uid++, done: false, description: 'feed the turtle' },
-		{ id: uid++, done: false, description: 'fix some bugs' },
+		{ id: uid++, done: false, description: 'write some docs' },
+		{ id: uid++, done: false, description: 'write some docs' },
+		{ id: uid++, done: false, description: 'write some docs' },
+		{ id: uid++, done: false, description: 'write some docs' },
+		{ id: uid++, done: false, description: 'write some docs' },
 	];
 
 	function add(input) {
@@ -62,10 +62,10 @@
 	<div class='left'>
 		<h2>todo</h2>
 		{#each todos.filter(t => !t.done) as todo (todo.id)}
-			<label>
-				<input type=checkbox on:change={() => mark(todo, true)}>
+			<label class="done">
+				<input type=checkbox checked on:change={() => mark(todo, true)}>
 				{todo.description}
-				<button on:click="{() => remove(todo)}">remove</button>
+				<button on:click="{() => remove(todo)}"></button>
 			</label>
 		{/each}
 	</div>
@@ -76,7 +76,7 @@
 			<label class="done">
 				<input type=checkbox checked on:change={() => mark(todo, false)}>
 				{todo.description}
-				<button on:click="{() => remove(todo)}">remove</button>
+				<button on:click="{() => remove(todo)}"></button>
 			</label>
 		{/each}
 	</div>
@@ -101,7 +101,7 @@
 		user-select: none;
 		margin: 0 0 0.5em 0;
 	}
-
+/* This fucking sucks. It took me like 30 minutes to realize that I needed to make the label a display block */
 	label {
 		position: relative;
 		line-height: 1.2;
@@ -112,6 +112,7 @@
 		border: 1px solid hsl(240, 8%, 70%);
 		background-color:hsl(240, 8%, 93%);
 		color: #333;
+		display: block;
 	}
 
 	input[type="checkbox"] {
@@ -129,15 +130,14 @@
 	button {
 		position: absolute;
 		top: 0;
-		right: 0.2em;
+		right: 0.1em;
 		width: 2em;
 		height: 100%;
-		background: no-repeat 50% 50% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23676778' d='M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M17,7H14.5L13.5,6H10.5L9.5,7H7V9H17V7M9,18H15A1,1 0 0,0 16,17V10H8V17A1,1 0 0,0 9,18Z'%3E%3C/path%3E%3C/svg%3E");
+		background: no-repeat 50% 50% url("$lib/images/trash.svg");
 		background-size: 1.4em 1.4em;
 		border: none;
 		opacity: 0;
-		transition: opacity 0.2s;
-		text-indent: -9999px;
+		transition: opacity 0.5s;
 		cursor: pointer;
 	}
 

@@ -1,6 +1,7 @@
 ## Next steps
 
 Try absolute positioning for if statements and dynamic positioning of hidden elements
+Also try using some Windows powertoys to play around with features
 
 ## Creating a project
 

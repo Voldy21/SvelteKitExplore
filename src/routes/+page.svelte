@@ -10,11 +10,14 @@
 <div class="body">
     
     <div class="content">
+
+
         <h2>Todo:</h2>
         <p>Fix the todo app 2/13/23</p>
         <p>Work on backend cool shit for sveltekit - in progress</p>
         <p>Work on making this into a docker container</p>
         <p>github</p>
+
         <select bind:value={selected}>
             <option value="Counter">Counter</option>
             <option value="Reactive">Reactive</option>
@@ -77,6 +80,8 @@ select {
   background-color: #8458B3;
   border: 1px solid #ccc;
 }
+
+
 
 
 
